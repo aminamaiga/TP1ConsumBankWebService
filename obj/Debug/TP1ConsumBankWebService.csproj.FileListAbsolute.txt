@@ -1,0 +1,7 @@
+C:\Users\HP\source\repos\TP1ConsumBankWebService\bin\Debug\TP1ConsumBankWebService.exe.config
+C:\Users\HP\source\repos\TP1ConsumBankWebService\bin\Debug\TP1ConsumBankWebService.exe
+C:\Users\HP\source\repos\TP1ConsumBankWebService\bin\Debug\TP1ConsumBankWebService.pdb
+C:\Users\HP\source\repos\TP1ConsumBankWebService\obj\Debug\TP1ConsumBankWebService.csprojAssemblyReference.cache
+C:\Users\HP\source\repos\TP1ConsumBankWebService\obj\Debug\TP1ConsumBankWebService.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\TP1ConsumBankWebService\obj\Debug\TP1ConsumBankWebService.exe
+C:\Users\HP\source\repos\TP1ConsumBankWebService\obj\Debug\TP1ConsumBankWebService.pdb

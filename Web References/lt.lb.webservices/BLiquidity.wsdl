@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://webservices.lb.lt/BLiquidity" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://webservices.lb.lt/BLiquidity" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebService provides information on Liquidity Situation in the Banking System.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://webservices.lb.lt/BLiquidity">
+      <s:element name="getBLiquidityRateTypes">
+        <s:complexType />
+      </s:element>
+      <s:element name="getBLiquidityRateTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBLiquidityRateTypesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLatestBLiquidityRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RateType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLatestBLiquidityRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getLatestBLiquidityRateResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBLiquidityRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RateType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBLiquidityRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getBLiquidityRateResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBLiquidityRatesByDate_XmlString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBLiquidityRatesByDate_XmlStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBLiquidityRatesByDate_XmlStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBLiquidityByRateType_XmlString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RateType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateLow" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateHigh" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBLiquidityByRateType_XmlStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBLiquidityByRateType_XmlStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBLiquidityRatesByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBLiquidityRatesByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBLiquidityRatesByDateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBLiquidityByRateType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RateType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateLow" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateHigh" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBLiquidityByRateTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBLiquidityByRateTypeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="decimal" type="s:decimal" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getBLiquidityRateTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:getBLiquidityRateTypes" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRateTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:getBLiquidityRateTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLatestBLiquidityRateSoapIn">
+    <wsdl:part name="parameters" element="tns:getLatestBLiquidityRate" />
+  </wsdl:message>
+  <wsdl:message name="getLatestBLiquidityRateSoapOut">
+    <wsdl:part name="parameters" element="tns:getLatestBLiquidityRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRateSoapIn">
+    <wsdl:part name="parameters" element="tns:getBLiquidityRate" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRateSoapOut">
+    <wsdl:part name="parameters" element="tns:getBLiquidityRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRatesByDate_XmlStringSoapIn">
+    <wsdl:part name="parameters" element="tns:getBLiquidityRatesByDate_XmlString" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRatesByDate_XmlStringSoapOut">
+    <wsdl:part name="parameters" element="tns:getBLiquidityRatesByDate_XmlStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityByRateType_XmlStringSoapIn">
+    <wsdl:part name="parameters" element="tns:getBLiquidityByRateType_XmlString" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityByRateType_XmlStringSoapOut">
+    <wsdl:part name="parameters" element="tns:getBLiquidityByRateType_XmlStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRatesByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:getBLiquidityRatesByDate" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRatesByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:getBLiquidityRatesByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityByRateTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:getBLiquidityByRateType" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityByRateTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:getBLiquidityByRateTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRateTypesHttpGetIn" />
+  <wsdl:message name="getBLiquidityRateTypesHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="getLatestBLiquidityRateHttpGetIn">
+    <wsdl:part name="RateType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getLatestBLiquidityRateHttpGetOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRateHttpGetIn">
+    <wsdl:part name="RateType" type="s:string" />
+    <wsdl:part name="Date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRateHttpGetOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRatesByDate_XmlStringHttpGetIn">
+    <wsdl:part name="Date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRatesByDate_XmlStringHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityByRateType_XmlStringHttpGetIn">
+    <wsdl:part name="RateType" type="s:string" />
+    <wsdl:part name="DateLow" type="s:string" />
+    <wsdl:part name="DateHigh" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityByRateType_XmlStringHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRatesByDateHttpGetIn">
+    <wsdl:part name="Date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRatesByDateHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityByRateTypeHttpGetIn">
+    <wsdl:part name="RateType" type="s:string" />
+    <wsdl:part name="DateLow" type="s:string" />
+    <wsdl:part name="DateHigh" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityByRateTypeHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRateTypesHttpPostIn" />
+  <wsdl:message name="getBLiquidityRateTypesHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="getLatestBLiquidityRateHttpPostIn">
+    <wsdl:part name="RateType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getLatestBLiquidityRateHttpPostOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRateHttpPostIn">
+    <wsdl:part name="RateType" type="s:string" />
+    <wsdl:part name="Date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRateHttpPostOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRatesByDate_XmlStringHttpPostIn">
+    <wsdl:part name="Date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRatesByDate_XmlStringHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityByRateType_XmlStringHttpPostIn">
+    <wsdl:part name="RateType" type="s:string" />
+    <wsdl:part name="DateLow" type="s:string" />
+    <wsdl:part name="DateHigh" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityByRateType_XmlStringHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRatesByDateHttpPostIn">
+    <wsdl:part name="Date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityRatesByDateHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityByRateTypeHttpPostIn">
+    <wsdl:part name="RateType" type="s:string" />
+    <wsdl:part name="DateLow" type="s:string" />
+    <wsdl:part name="DateHigh" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getBLiquidityByRateTypeHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:portType name="BLiquiditySoap">
+    <wsdl:operation name="getBLiquidityRateTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a ist of banking liquidity rate types.</wsdl:documentation>
+      <wsdl:input message="tns:getBLiquidityRateTypesSoapIn" />
+      <wsdl:output message="tns:getBLiquidityRateTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLatestBLiquidityRate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the current banking liquidity rate.</wsdl:documentation>
+      <wsdl:input message="tns:getLatestBLiquidityRateSoapIn" />
+      <wsdl:output message="tns:getLatestBLiquidityRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the banking liquidity rate for the specified date.</wsdl:documentation>
+      <wsdl:input message="tns:getBLiquidityRateSoapIn" />
+      <wsdl:output message="tns:getBLiquidityRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRatesByDate_XmlString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a XML formatted string containing liquidity rate for the specified date.</wsdl:documentation>
+      <wsdl:input message="tns:getBLiquidityRatesByDate_XmlStringSoapIn" />
+      <wsdl:output message="tns:getBLiquidityRatesByDate_XmlStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityByRateType_XmlString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a XML formatted string containing liquidity rates that are between specified dates.</wsdl:documentation>
+      <wsdl:input message="tns:getBLiquidityByRateType_XmlStringSoapIn" />
+      <wsdl:output message="tns:getBLiquidityByRateType_XmlStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRatesByDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list containing liquidity rate for the specified date.</wsdl:documentation>
+      <wsdl:input message="tns:getBLiquidityRatesByDateSoapIn" />
+      <wsdl:output message="tns:getBLiquidityRatesByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityByRateType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list containing liquidity rates that are between specified dates.</wsdl:documentation>
+      <wsdl:input message="tns:getBLiquidityByRateTypeSoapIn" />
+      <wsdl:output message="tns:getBLiquidityByRateTypeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="BLiquidityHttpGet">
+    <wsdl:operation name="getBLiquidityRateTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a ist of banking liquidity rate types.</wsdl:documentation>
+      <wsdl:input message="tns:getBLiquidityRateTypesHttpGetIn" />
+      <wsdl:output message="tns:getBLiquidityRateTypesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLatestBLiquidityRate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the current banking liquidity rate.</wsdl:documentation>
+      <wsdl:input message="tns:getLatestBLiquidityRateHttpGetIn" />
+      <wsdl:output message="tns:getLatestBLiquidityRateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the banking liquidity rate for the specified date.</wsdl:documentation>
+      <wsdl:input message="tns:getBLiquidityRateHttpGetIn" />
+      <wsdl:output message="tns:getBLiquidityRateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRatesByDate_XmlString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a XML formatted string containing liquidity rate for the specified date.</wsdl:documentation>
+      <wsdl:input message="tns:getBLiquidityRatesByDate_XmlStringHttpGetIn" />
+      <wsdl:output message="tns:getBLiquidityRatesByDate_XmlStringHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityByRateType_XmlString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a XML formatted string containing liquidity rates that are between specified dates.</wsdl:documentation>
+      <wsdl:input message="tns:getBLiquidityByRateType_XmlStringHttpGetIn" />
+      <wsdl:output message="tns:getBLiquidityByRateType_XmlStringHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRatesByDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list containing liquidity rate for the specified date.</wsdl:documentation>
+      <wsdl:input message="tns:getBLiquidityRatesByDateHttpGetIn" />
+      <wsdl:output message="tns:getBLiquidityRatesByDateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityByRateType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list containing liquidity rates that are between specified dates.</wsdl:documentation>
+      <wsdl:input message="tns:getBLiquidityByRateTypeHttpGetIn" />
+      <wsdl:output message="tns:getBLiquidityByRateTypeHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="BLiquidityHttpPost">
+    <wsdl:operation name="getBLiquidityRateTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a ist of banking liquidity rate types.</wsdl:documentation>
+      <wsdl:input message="tns:getBLiquidityRateTypesHttpPostIn" />
+      <wsdl:output message="tns:getBLiquidityRateTypesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLatestBLiquidityRate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the current banking liquidity rate.</wsdl:documentation>
+      <wsdl:input message="tns:getLatestBLiquidityRateHttpPostIn" />
+      <wsdl:output message="tns:getLatestBLiquidityRateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the banking liquidity rate for the specified date.</wsdl:documentation>
+      <wsdl:input message="tns:getBLiquidityRateHttpPostIn" />
+      <wsdl:output message="tns:getBLiquidityRateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRatesByDate_XmlString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a XML formatted string containing liquidity rate for the specified date.</wsdl:documentation>
+      <wsdl:input message="tns:getBLiquidityRatesByDate_XmlStringHttpPostIn" />
+      <wsdl:output message="tns:getBLiquidityRatesByDate_XmlStringHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityByRateType_XmlString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a XML formatted string containing liquidity rates that are between specified dates.</wsdl:documentation>
+      <wsdl:input message="tns:getBLiquidityByRateType_XmlStringHttpPostIn" />
+      <wsdl:output message="tns:getBLiquidityByRateType_XmlStringHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRatesByDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list containing liquidity rate for the specified date.</wsdl:documentation>
+      <wsdl:input message="tns:getBLiquidityRatesByDateHttpPostIn" />
+      <wsdl:output message="tns:getBLiquidityRatesByDateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityByRateType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list containing liquidity rates that are between specified dates.</wsdl:documentation>
+      <wsdl:input message="tns:getBLiquidityByRateTypeHttpPostIn" />
+      <wsdl:output message="tns:getBLiquidityByRateTypeHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BLiquiditySoap" type="tns:BLiquiditySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getBLiquidityRateTypes">
+      <soap:operation soapAction="http://webservices.lb.lt/BLiquidity/getBLiquidityRateTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLatestBLiquidityRate">
+      <soap:operation soapAction="http://webservices.lb.lt/BLiquidity/getLatestBLiquidityRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRate">
+      <soap:operation soapAction="http://webservices.lb.lt/BLiquidity/getBLiquidityRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRatesByDate_XmlString">
+      <soap:operation soapAction="http://webservices.lb.lt/BLiquidity/getBLiquidityRatesByDate_XmlString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityByRateType_XmlString">
+      <soap:operation soapAction="http://webservices.lb.lt/BLiquidity/getBLiquidityByRateType_XmlString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRatesByDate">
+      <soap:operation soapAction="http://webservices.lb.lt/BLiquidity/getBLiquidityRatesByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityByRateType">
+      <soap:operation soapAction="http://webservices.lb.lt/BLiquidity/getBLiquidityByRateType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BLiquiditySoap12" type="tns:BLiquiditySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getBLiquidityRateTypes">
+      <soap12:operation soapAction="http://webservices.lb.lt/BLiquidity/getBLiquidityRateTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLatestBLiquidityRate">
+      <soap12:operation soapAction="http://webservices.lb.lt/BLiquidity/getLatestBLiquidityRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRate">
+      <soap12:operation soapAction="http://webservices.lb.lt/BLiquidity/getBLiquidityRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRatesByDate_XmlString">
+      <soap12:operation soapAction="http://webservices.lb.lt/BLiquidity/getBLiquidityRatesByDate_XmlString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityByRateType_XmlString">
+      <soap12:operation soapAction="http://webservices.lb.lt/BLiquidity/getBLiquidityByRateType_XmlString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRatesByDate">
+      <soap12:operation soapAction="http://webservices.lb.lt/BLiquidity/getBLiquidityRatesByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityByRateType">
+      <soap12:operation soapAction="http://webservices.lb.lt/BLiquidity/getBLiquidityByRateType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BLiquidityHttpGet" type="tns:BLiquidityHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="getBLiquidityRateTypes">
+      <http:operation location="/getBLiquidityRateTypes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLatestBLiquidityRate">
+      <http:operation location="/getLatestBLiquidityRate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRate">
+      <http:operation location="/getBLiquidityRate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRatesByDate_XmlString">
+      <http:operation location="/getBLiquidityRatesByDate_XmlString" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityByRateType_XmlString">
+      <http:operation location="/getBLiquidityByRateType_XmlString" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRatesByDate">
+      <http:operation location="/getBLiquidityRatesByDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityByRateType">
+      <http:operation location="/getBLiquidityByRateType" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BLiquidityHttpPost" type="tns:BLiquidityHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="getBLiquidityRateTypes">
+      <http:operation location="/getBLiquidityRateTypes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLatestBLiquidityRate">
+      <http:operation location="/getLatestBLiquidityRate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRate">
+      <http:operation location="/getBLiquidityRate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRatesByDate_XmlString">
+      <http:operation location="/getBLiquidityRatesByDate_XmlString" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityByRateType_XmlString">
+      <http:operation location="/getBLiquidityByRateType_XmlString" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityRatesByDate">
+      <http:operation location="/getBLiquidityRatesByDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBLiquidityByRateType">
+      <http:operation location="/getBLiquidityByRateType" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BLiquidity">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebService provides information on Liquidity Situation in the Banking System.</wsdl:documentation>
+    <wsdl:port name="BLiquiditySoap" binding="tns:BLiquiditySoap">
+      <soap:address location="http://webservices.lb.lt/BLiquidity/BLiquidity.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BLiquiditySoap12" binding="tns:BLiquiditySoap12">
+      <soap12:address location="http://webservices.lb.lt/BLiquidity/BLiquidity.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BLiquidityHttpGet" binding="tns:BLiquidityHttpGet">
+      <http:address location="http://webservices.lb.lt/BLiquidity/BLiquidity.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BLiquidityHttpPost" binding="tns:BLiquidityHttpPost">
+      <http:address location="http://webservices.lb.lt/BLiquidity/BLiquidity.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

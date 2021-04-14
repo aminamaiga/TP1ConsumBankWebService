@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://webservices.lb.lt/BLiquidity/BLiquidity.asmx?wsdl" docRef="http://webservices.lb.lt/BLiquidity/BLiquidity.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://webservices.lb.lt/BLiquidity/BLiquidity.asmx" xmlns:q1="http://webservices.lb.lt/BLiquidity" binding="q1:BLiquiditySoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://webservices.lb.lt/BLiquidity/BLiquidity.asmx" xmlns:q2="http://webservices.lb.lt/BLiquidity" binding="q2:BLiquiditySoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
